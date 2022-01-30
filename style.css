@@ -1,0 +1,31 @@
+/*--- jesse-style ---*/
+
+tr th,tr td{ vertical-align: middle;}
+.imgProduct{ 
+  height: 80px; 
+  width: 140px; 
+	object-fit: cover;/*圖片固定尺寸不壓縮*/
+  flex: 1;
+}
+.imgPreview{ 
+  width: 140px; 
+	object-fit: cover;/*圖片固定尺寸不壓縮*/
+  flex: 1;
+}
+/*自訂樣式*/
+.gray-300{  color:#dee2e6;}
+.text-pink{ color: #ffabc2;}
+.text-pinkdeep{ color: #ff789c;}
+.bg-pink { background-color: #ffabc2;}
+.btn-pink {
+  color: #212529;
+  background-color: #ffdee7;
+  border-color: #ffdee7;
+}
+.btn-pinkdeep {
+  color: #fff;
+  background-color: #ff789c;
+  border-color: #ff789c;
+}
+.text-1-2{ font-size: 1.2em;}
+.text-1-5{ font-size: 1.5em;}

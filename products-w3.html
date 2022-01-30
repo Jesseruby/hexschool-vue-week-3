@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,7 +37,7 @@
       </div><!-- .d-flex -->
     </div><!-- .container -->
   </header>
-  
+
   <!-- product -->
   <div id="product">
     <!-- 產品列表 -->
@@ -68,7 +68,7 @@
                 <td>{{ item.category }}</td>
                 <td>
                   <img class="imgProduct"
-                      :src="item.imagesUrl[0]" >
+                      :src="item.imageUrl">
                 </td>
                 <td>{{ item.title }}</td>
                 <td>{{ item.origin_price }}</td>
@@ -101,7 +101,7 @@
         </div><!-- .col -->
       </div><!-- .row -->
     </div><!-- .container -->
-
+    
     <!-- modal 新增 / 編輯 -->
     <div id="productModal" class="modal" tabindex="-1">
       <div class="modal-dialog modal-xl">
@@ -234,7 +234,7 @@
           <div class="modal-body text-center py-5">
             是否刪除
             <strong class="badge bg-warning text-dark px-4 py-2 text-1-2"> {{ tempProduct.title }} </strong>
-            商品，刪除後將無法恢復！
+            商品，刪除後將無法恢復。
           </div><!-- .modal-body -->
           <div class="modal-footer">
             <button type="button" class="btn btn-warning"
@@ -245,12 +245,6 @@
         </div><!-- .modal-content -->
       </div><!-- .modal-dialog -->
     </div><!-- .delProductModal -->
-
-    <!-- 轉圈圈 -->
-    <div id="loading" class="spinner-border d-none" role="status">
-      <span class="visually-hidden">Loading...</span>
-    </div>
-
   </div><!-- .product -->
 
   <!-- 頁尾 -->

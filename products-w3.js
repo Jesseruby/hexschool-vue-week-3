@@ -11,14 +11,11 @@
 import { createApp } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.9/vue.esm-browser.js';
 
 const apiUrl = 'https://vue3-course-api.hexschool.io/v2';//作業用API
-const apiPath =  'jesse-food';//作業用個人路徑
+const apiPath = 'jesse-food-2';//作業用個人路徑
 
 //在外層定義modal，可以給其他地方使用
 let productModal = null;
 let delProductModal = null;
-
-//轉圈圈
-let loading = null;
 
 const app = createApp({
   data() {
@@ -45,7 +42,7 @@ const app = createApp({
         })//.then
         .catch((err) => {
           console.dir(err);
-          alert(err.response.data.message);//改第2周的錯誤
+          alert(err.data.message);
           window.location = 'index.html';//失敗轉回登入畫面
         })//.catch
     },//.checkLogin
@@ -55,10 +52,11 @@ const app = createApp({
       axios.get(url)
         .then((response) => {
           this.products = response.data.products;//載入產品列表
+          console.log(response.data.products);
         })//.then
         .catch((err) => {
           console.dir(err);
-          alert(err.response.data.message);//改第2周的錯誤
+          //alert(err.data.message);//出現錯誤？
         })//.catch
     },//.getData
     // 5. 打開 modal
@@ -92,11 +90,13 @@ const app = createApp({
         http = 'put'
       }
       axios[http](url, { data: this.tempProduct }).then((response) => {
-        alert(response.data.message);
+        console.log(response);
+        alert(err.response.message);
         productModal.hide();
         this.getData();
       }).catch((err) => {
-        alert(err.data.message);
+        console.dir(err);
+        alert(err.response.message);
       })
     },//.updateProduct
     //modal 產品：刪除
@@ -107,6 +107,7 @@ const app = createApp({
         delProductModal.hide();
         this.getData();
       }).catch((err) => {
+        console.dir(err);
         alert(err.data.message);
       })
     },//.removeProduct
@@ -126,10 +127,6 @@ const app = createApp({
     //   productModal.hide();
     // },3000)
 
-    //不知道轉圈圈特效怎麼載入？
-    // loading = new bootstrap.spinner(document.getElementById('loading'));
-    // loading.show();
-    
   },//.mounted
 })//.app
 app.mount('#product');

@@ -101,7 +101,7 @@ const app = createApp({
     },//.updateProduct
     //modal 產品：刪除
     removeProduct() {
-      const url = `${this.apiUrl}/api/${this.apiPath}/admin/product/${this.tempProduct.id}`;
+      const url = `${apiUrl}/api/${apiPath}/admin/product/${this.tempProduct.id}`;
       axios.delete(url).then((response) => {
         alert(response.data.message);
         delProductModal.hide();

@@ -17,6 +17,9 @@ const apiPath =  'jesse-food';//作業用個人路徑
 let productModal = null;
 let delProductModal = null;
 
+//轉圈圈
+let loading = null;
+
 const app = createApp({
   data() {
     return {
@@ -123,6 +126,10 @@ const app = createApp({
     //   productModal.hide();
     // },3000)
 
+    //不知道轉圈圈特效怎麼載入？
+    // loading = new bootstrap.spinner(document.getElementById('loading'));
+    // loading.show();
+    
   },//.mounted
 })//.app
 app.mount('#product');
